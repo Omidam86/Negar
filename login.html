@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ورود | نگار</title>
+
+    <meta
+        name="description"
+        content="ورود یا ثبت‌نام در شبکه اجتماعی نگار."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         APP
+    ========================== -->
+    <div class="auth-page">
+
+
+        <!-- =========================
+             AUTH HEADER
+        ========================== -->
+        <header class="auth-header">
+
+            <a
+                href="index.html"
+                class="auth-brand"
+                aria-label="بازگشت به صفحه اصلی"
+            >
+                <span class="brand-mark">ن</span>
+                <span class="brand-name">نگار</span>
+            </a>
+
+            <a
+                href="index.html"
+                class="back-home"
+            >
+                بازگشت به خانه
+            </a>
+
+        </header>
+
+
+        <!-- =========================
+             AUTH CONTAINER
+        ========================== -->
+        <main class="auth-main">
+
+            <section class="auth-card">
+
+
+                <!-- =========================
+                     AUTH INTRO
+                ========================== -->
+                <div class="auth-intro">
+
+                    <div class="auth-icon">
+                        ن
+                    </div>
+
+                    <h1>
+                        به نگار خوش آمدی
+                    </h1>
+
+                    <p>
+                        برای ادامه وارد حساب خودت شو
+                        یا یک حساب جدید بساز.
+                    </p>
+
+                </div>
+
+
+                <!-- =========================
+                     AUTH TABS
+                ========================== -->
+                <div
+                    class="auth-tabs"
+                    role="tablist"
+                    aria-label="نوع ورود"
+                >
+
+                    <button
+                        type="button"
+                        class="auth-tab active"
+                        id="login-tab"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="login-form"
+                    >
+                        ورود
+                    </button>
+
+                    <button
+                        type="button"
+                        class="auth-tab"
+                        id="register-tab"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="register-form"
+                    >
+                        ثبت‌نام
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                     LOGIN FORM
+                ========================== -->
+                <form
+                    id="login-form"
+                    class="auth-form"
+                    action="#"
+                    method="post"
+                >
+
+                    <div class="form-group">
+
+                        <label for="login-email">
+                            ایمیل
+                        </label>
+
+                        <input
+                            type="email"
+                            id="login-email"
+                            name="email"
+                            placeholder="example@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="form-label-row">
+
+                            <label for="login-password">
+                                رمز عبور
+                            </label>
+
+                            <a
+                                href="#"
+                                class="forgot-password"
+                            >
+                                رمز عبور را فراموش کرده‌ای؟
+                            </a>
+
+                        </div>
+
+                        <input
+                            type="password"
+                            id="login-password"
+                            name="password"
+                            placeholder="رمز عبور"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-options">
+
+                        <label class="remember-me">
+
+                            <input
+                                type="checkbox"
+                                name="remember"
+                            >
+
+                            <span>
+                                مرا به خاطر بسپار
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="auth-submit"
+                    >
+                        ورود به نگار
+                    </button>
+
+                </form>
+
+
+                <!-- =========================
+                     REGISTER FORM
+                ========================== -->
+                <form
+                    id="register-form"
+                    class="auth-form"
+                    action="#"
+                    method="post"
+                    hidden
+                >
+
+                    <div class="form-group">
+
+                        <label for="register-name">
+                            نام نمایشی
+                        </label>
+
+                        <input
+                            type="text"
+                            id="register-name"
+                            name="display_name"
+                            placeholder="نام شما"
+                            autocomplete="name"
+                            maxlength="50"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="register-username">
+                            نام کاربری
+                        </label>
+
+                        <div class="username-input">
+
+                            <span>@</span>
+
+                            <input
+                                type="text"
+                                id="register-username"
+                                name="username"
+                                placeholder="username"
+                                autocomplete="username"
+                                minlength="3"
+                                maxlength="20"
+                                pattern="[A-Za-z0-9_]+"
+                                required
+                            >
+
+                        </div>
+
+                        <small>
+                            فقط حروف انگلیسی، عدد و _ مجاز است.
+                        </small>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="register-email">
+                            ایمیل
+                        </label>
+
+                        <input
+                            type="email"
+                            id="register-email"
+                            name="email"
+                            placeholder="example@email.com"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="register-password">
+                            رمز عبور
+                        </label>
+
+                        <input
+                            type="password"
+                            id="register-password"
+                            name="password"
+                            placeholder="حداقل ۸ کاراکتر"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="register-password-confirm">
+                            تکرار رمز عبور
+                        </label>
+
+                        <input
+                            type="password"
+                            id="register-password-confirm"
+                            name="password_confirm"
+                            placeholder="رمز عبور را دوباره وارد کنید"
+                            autocomplete="new-password"
+                            minlength="8"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-options">
+
+                        <label class="terms">
+
+                            <input
+                                type="checkbox"
+                                name="terms"
+                                required
+                            >
+
+                            <span>
+                                قوانین و حریم خصوصی نگار را می‌پذیرم.
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="auth-submit"
+                    >
+                        ساخت حساب
+                    </button>
+
+                </form>
+
+
+                <!-- =========================
+                     DIVIDER
+                ========================== -->
+                <div class="auth-divider">
+
+                    <span>یا</span>
+
+                </div>
+
+
+                <!-- =========================
+                     GUEST ACCESS
+                ========================== -->
+                <a
+                    href="index.html"
+                    class="guest-access"
+                >
+                    ادامه بدون ورود
+                </a>
+
+
+                <!-- =========================
+                     AUTH FOOTER
+                ========================== -->
+                <div class="auth-footer">
+
+                    <span>
+                        با استفاده از نگار، با قوانین و شرایط
+                        استفاده موافقت می‌کنید.
+                    </span>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- =========================
+             PAGE FOOTER
+        ========================== -->
+        <footer class="auth-page-footer">
+
+            <span>
+                © 2026 نگار
+            </span>
+
+            <a href="#">
+                حریم خصوصی
+            </a>
+
+            <a href="#">
+                قوانین
+            </a>
+
+        </footer>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+         بعداً اضافه می‌شود
+    ========================== -->
+    <script src="js/auth.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>نگار — خانه</title>
+
+    <meta
+        name="description"
+        content="نگار — یک شبکه اجتماعی ساده برای اشتراک‌گذاری افکار و گفتگو."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+        <header class="site-header">
+
+            <div class="header-inner">
+
+                <a href="index.html" class="brand" aria-label="صفحه اصلی">
+                    <span class="brand-mark">ن</span>
+                    <span class="brand-name">نگار</span>
+                </a>
+
+                <a href="search.html" class="header-search">
+                    <span class="header-search-icon">⌕</span>
+                    <span class="header-search-text">جستجو</span>
+                </a>
+
+                <div class="header-actions">
+
+                    <a href="login.html" class="header-login">
+                        ورود
+                    </a>
+
+                    <a href="login.html" class="header-signup">
+                        ثبت‌نام
+                    </a>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             MAIN
+        ========================== -->
+        <main class="main-layout">
+
+
+            <!-- =========================
+                 SIDEBAR
+            ========================== -->
+            <aside class="sidebar">
+
+                <nav class="main-nav" aria-label="منوی اصلی">
+
+                    <a href="index.html" class="nav-item active">
+                        <span class="nav-icon">⌂</span>
+                        <span class="nav-label">خانه</span>
+                    </a>
+
+                    <a href="search.html" class="nav-item">
+                        <span class="nav-icon">⌕</span>
+                        <span class="nav-label">جستجو</span>
+                    </a>
+
+                    <a href="login.html" class="nav-item">
+                        <span class="nav-icon">♡</span>
+                        <span class="nav-label">اعلان‌ها</span>
+                    </a>
+
+                    <a href="login.html" class="nav-item">
+                        <span class="nav-icon">✉</span>
+                        <span class="nav-label">پیام‌ها</span>
+                    </a>
+
+                    <a href="profile.html" class="nav-item">
+                        <span class="nav-icon">◎</span>
+                        <span class="nav-label">پروفایل</span>
+                    </a>
+
+                    <a href="login.html" class="nav-item">
+                        <span class="nav-icon">⚙</span>
+                        <span class="nav-label">تنظیمات</span>
+                    </a>
+
+                </nav>
+
+
+                <a href="login.html" class="create-post-button">
+                    <span class="create-post-icon">＋</span>
+                    <span>پست جدید</span>
+                </a>
+
+            </aside>
+
+
+            <!-- =========================
+                 FEED
+            ========================== -->
+            <section class="feed" aria-label="فید پست‌ها">
+
+                <div class="feed-header">
+
+                    <div>
+                        <h1>خانه</h1>
+                        <p>آخرین نوشته‌ها</p>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="feed-filter"
+                        aria-label="تغییر فیلتر فید"
+                    >
+                        برای شما
+                        <span>⌄</span>
+                    </button>
+
+                </div>
+
+
+                <!-- =========================
+                     GUEST NOTICE
+                ========================== -->
+                <div class="guest-notice">
+
+                    <div class="guest-notice-content">
+
+                        <strong>به نگار خوش آمدی</strong>
+
+                        <span>
+                            برای دیدن پست‌ها نیازی به ورود نداری.
+                            برای تعامل با دیگران حساب بساز.
+                        </span>
+
+                    </div>
+
+                    <a href="login.html" class="guest-notice-action">
+                        ورود
+                    </a>
+
+                </div>
+
+
+                <!-- =========================
+                     POSTS
+                ========================== -->
+                <div class="posts">
+
+
+                    <!-- POST 01 -->
+                    <article class="post" data-post-id="1">
+
+                        <div class="post-avatar">
+                            <span>AR</span>
+                        </div>
+
+                        <div class="post-content">
+
+                            <header class="post-header">
+
+                                <div class="post-author">
+
+                                    <a href="profile.html" class="author-name">
+                                        آرین
+                                    </a>
+
+                                    <span class="author-username">
+                                        @arian
+                                    </span>
+
+                                    <span class="post-dot">·</span>
+
+                                    <time datetime="2026-09-11T10:30:00">
+                                        ۲ ساعت پیش
+                                    </time>
+
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="post-more"
+                                    aria-label="گزینه‌های بیشتر"
+                                >
+                                    ⋯
+                                </button>
+
+                            </header>
+
+
+                            <div class="post-text">
+
+                                <p>
+                                    گاهی لازم نیست سریع‌تر حرکت کنی،
+                                    فقط باید مسیر درست را پیدا کنی.
+                                </p>
+
+                            </div>
+
+
+                            <footer class="post-actions">
+
+                                <button
+                                    type="button"
+                                    class="post-action comment-action"
+                                    data-action="comment"
+                                >
+                                    <span class="action-icon">○</span>
+                                    <span class="action-count">12</span>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="post-action repost-action"
+                                    data-action="repost"
+                                >
+                                    <span class="action-icon">↻</span>
+                                    <span class="action-count">8</span>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="post-action like-action"
+                                    data-action="like"
+                                >
+                                    <span class="action-icon">♡</span>
+                                    <span class="action-count">47</span>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="post-action share-action"
+                                    data-action="share"
+                                    aria-label="اشتراک‌گذاری"
+                                >
+                                    <span class="action-icon">↗</span>
+                                </button>
+
+                            </footer>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- POST 02 -->
+                    <article class="post" data-post-id="2">
+
+                        <div class="post-avatar">
+                            <span>MN</span>
+                        </div>
+
+                        <div class="post-content">
+
+                            <header class="post-header">
+
+                                <div class="post-author">
+
+                                    <a href="profile.html" class="author-name">
+                                        مانی
+                                    </a>
+
+                                    <span class="author-username">
+                                        @mani
+                                    </span>
+
+                                    <span class="post-dot">·</span>
+
+                                    <time datetime="2026-09-11T08:15:00">
+                                        ۴ ساعت پیش
+                                    </time>
+
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="post-more"
+                                    aria-label="گزینه‌های بیشتر"
+                                >
+                                    ⋯
+                                </button>
+
+                            </header>
+
+
+                            <div class="post-text">
+
+                                <p>
+                                    ساختن چیزی که واقعاً دوستش داری،
+                                    از صدتا ایده‌ای که هیچ‌وقت اجرا نمی‌شن
+                                    ارزشمندتره.
+                                </p>
+
+                            </div>
+
+
+                            <footer class="post-actions">
+
+                                <button
+                                    type="button"
+                                    class="post-action comment-action"
+                                    data-action="comment"
+                                >
+                                    <span class="action-icon">○</span>
+                                    <span class="action-count">5</span>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="post-action repost-action"
+                                    data-action="repost"
+                                >
+                                    <span class="action-icon">↻</span>
+                                    <span class="action-count">3</span>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="post-action like-action"
+                                    data-action="like"
+                                >
+                                    <span class="action-icon">♡</span>
+                                    <span class="action-count">31</span>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="post-action share-action"
+                                    data-action="share"
+                                    aria-label="اشتراک‌گذاری"
+                                >
+                                    <span class="action-icon">↗</span>
+                                </button>
+
+                            </footer>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- POST 03 -->
+                    <article class="post" data-post-id="3">
+
+                        <div class="post-avatar">
+                            <span>SA</span>
+                        </div>
+
+                        <div class="post-content">
+
+                            <header class="post-header">
+
+                                <div class="post-author">
+
+                                    <a href="profile.html" class="author-name">
+                                        سارا
+                                    </a>
+
+                                    <span class="author-username">
+                                        @sara
+                                    </span>
+
+                                    <span class="post-dot">·</span>
+
+                                    <time datetime="2026-09-10T21:45:00">
+                                        دیروز
+                                    </time>
+
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="post-more"
+                                    aria-label="گزینه‌های بیشتر"
+                                >
+                                    ⋯
+                                </button>
+
+                            </header>
+
+
+                            <div class="post-text">
+
+                                <p>
+                                    شب‌ها بهترین زمان برای فکر کردن به
+                                    ایده‌هایی هستند که صبح جرأت اجرای آن‌ها
+                                    را پیدا می‌کنی.
+                                </p>
+
+                            </div>
+
+
+                            <footer class="post-actions">
+
+                                <button
+                                    type="button"
+                                    class="post-action comment-action"
+                                    data-action="comment"
+                                >
+                                    <span class="action-icon">○</span>
+                                    <span class="action-count">19</span>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="post-action repost-action"
+                                    data-action="repost"
+                                >
+                                    <span class="action-icon">↻</span>
+                                    <span class="action-count">11</span>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="post-action like-action"
+                                    data-action="like"
+                                >
+                                    <span class="action-icon">♡</span>
+                                    <span class="action-count">82</span>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="post-action share-action"
+                                    data-action="share"
+                                    aria-label="اشتراک‌گذاری"
+                                >
+                                    <span class="action-icon">↗</span>
+                                </button>
+
+                            </footer>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <div class="feed-loading">
+
+                    <button
+                        type="button"
+                        class="load-more"
+                    >
+                        نمایش پست‌های بیشتر
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 RIGHT PANEL
+            ========================== -->
+            <aside class="right-panel">
+
+
+                <!-- TRENDING -->
+                <section class="panel-card">
+
+                    <div class="panel-header">
+                        <h2>موضوعات داغ</h2>
+                    </div>
+
+
+                    <a href="search.html?q=برنامه‌نویسی" class="trend-item">
+
+                        <span class="trend-category">
+                            فناوری
+                        </span>
+
+                        <strong>
+                            #برنامه‌نویسی
+                        </strong>
+
+                        <span class="trend-count">
+                            ۲٫۴ هزار پست
+                        </span>
+
+                    </a>
+
+
+                    <a href="search.html?q=هوش‌مصنوعی" class="trend-item">
+
+                        <span class="trend-category">
+                            تکنولوژی
+                        </span>
+
+                        <strong>
+                            #هوش‌مصنوعی
+                        </strong>
+
+                        <span class="trend-count">
+                            ۱٫۸ هزار پست
+                        </span>
+
+                    </a>
+
+
+                    <a href="search.html?q=زندگی" class="trend-item">
+
+                        <span class="trend-category">
+                            عمومی
+                        </span>
+
+                        <strong>
+                            #زندگی
+                        </strong>
+
+                        <span class="trend-count">
+                            ۹۸۰ پست
+                        </span>
+
+                    </a>
+
+                </section>
+
+
+                <!-- SUGGESTED USERS -->
+                <section class="panel-card">
+
+                    <div class="panel-header">
+                        <h2>افراد پیشنهادی</h2>
+                    </div>
+
+
+                    <div class="suggested-user">
+
+                        <div class="suggested-avatar">
+                            AR
+                        </div>
+
+                        <div class="suggested-info">
+
+                            <a href="profile.html">
+                                آرین
+                            </a>
+
+                            <span>
+                                @arian
+                            </span>
+
+                        </div>
+
+                        <a href="login.html" class="follow-button">
+                            دنبال کردن
+                        </a>
+
+                    </div>
+
+
+                    <div class="suggested-user">
+
+                        <div class="suggested-avatar">
+                            MN
+                        </div>
+
+                        <div class="suggested-info">
+
+                            <a href="profile.html">
+                                مانی
+                            </a>
+
+                            <span>
+                                @mani
+                            </span>
+
+                        </div>
+
+                        <a href="login.html" class="follow-button">
+                            دنبال کردن
+                        </a>
+
+                    </div>
+
+
+                    <div class="suggested-user">
+
+                        <div class="suggested-avatar">
+                            SA
+                        </div>
+
+                        <div class="suggested-info">
+
+                            <a href="profile.html">
+                                سارا
+                            </a>
+
+                            <span>
+                                @sara
+                            </span>
+
+                        </div>
+
+                        <a href="login.html" class="follow-button">
+                            دنبال کردن
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- FOOTER -->
+                <footer class="site-footer">
+
+                    <a href="#">درباره</a>
+                    <a href="#">قوانین</a>
+                    <a href="#">حریم خصوصی</a>
+
+                    <span>
+                        © 2026 نگار
+                    </span>
+
+                </footer>
+
+            </aside>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================
+         LOGIN REQUIRED MODAL
+    ========================== -->
+    <div
+        class="modal-overlay"
+        id="login-modal"
+        hidden
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="login-modal-title"
+        >
+
+            <button
+                type="button"
+                class="modal-close"
+                aria-label="بستن"
+            >
+                ×
+            </button>
+
+            <div class="modal-icon">
+                ن
+            </div>
+
+            <h2 id="login-modal-title">
+                برای ادامه وارد شو
+            </h2>
+
+            <p>
+                برای لایک، کامنت، دنبال کردن و استفاده از امکانات بیشتر
+                باید وارد حساب کاربری خودت شوی.
+            </p>
+
+            <div class="modal-actions">
+
+                <a href="login.html" class="modal-primary">
+                    ورود
+                </a>
+
+                <a href="login.html" class="modal-secondary">
+                    ساخت حساب
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/app.js" defer></script>
+
+</body>
+
+</html>

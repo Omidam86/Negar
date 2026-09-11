@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>جستجو | نگار</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ================= HEADER ================= -->
+        <header class="topbar">
+
+            <div class="topbar-right">
+                <a href="index.html" class="brand">
+                    <span class="brand-icon">ن</span>
+                    <span class="brand-name">نگار</span>
+                </a>
+            </div>
+
+            <div class="topbar-center">
+                <a href="search.html" class="header-search">
+                    <span>⌕</span>
+                    <span>جستجو در نگار...</span>
+                </a>
+            </div>
+
+            <div class="topbar-left">
+                <a href="login.html" class="btn btn-primary">
+                    ورود / ثبت‌نام
+                </a>
+            </div>
+
+        </header>
+
+
+        <!-- ================= MAIN LAYOUT ================= -->
+        <div class="layout">
+
+            <!-- ================= SIDEBAR ================= -->
+            <aside class="sidebar">
+
+                <nav class="sidebar-nav">
+
+                    <a href="index.html" class="nav-item">
+                        <span class="nav-icon">⌂</span>
+                        <span>خانه</span>
+                    </a>
+
+                    <a href="search.html" class="nav-item active">
+                        <span class="nav-icon">⌕</span>
+                        <span>جستجو</span>
+                    </a>
+
+                    <a href="login.html" class="nav-item">
+                        <span class="nav-icon">♡</span>
+                        <span>اعلان‌ها</span>
+                    </a>
+
+                    <a href="login.html" class="nav-item">
+                        <span class="nav-icon">◇</span>
+                        <span>پیام‌ها</span>
+                    </a>
+
+                    <a href="profile.html" class="nav-item">
+                        <span class="nav-icon">◉</span>
+                        <span>پروفایل</span>
+                    </a>
+
+                    <a href="login.html" class="nav-item">
+                        <span class="nav-icon">⚙</span>
+                        <span>تنظیمات</span>
+                    </a>
+
+                </nav>
+
+                <a href="login.html" class="create-post-btn">
+                    <span>＋</span>
+                    <span>نوشته جدید</span>
+                </a>
+
+            </aside>
+
+
+            <!-- ================= SEARCH CONTENT ================= -->
+            <main class="main-content">
+
+                <section class="search-page">
+
+                    <!-- Page Header -->
+                    <div class="page-header">
+                        <div>
+                            <h1>جستجو</h1>
+                            <p>پیدا کن، کشف کن، دنبال کن.</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Search Box -->
+                    <div class="search-box">
+
+                        <form id="search-form" class="search-form">
+
+                            <div class="search-input-wrapper">
+
+                                <span class="search-input-icon">⌕</span>
+
+                                <input
+                                    type="search"
+                                    id="search-input"
+                                    name="query"
+                                    placeholder="جستجوی افراد، نوشته‌ها یا موضوعات..."
+                                    autocomplete="off"
+                                >
+
+                                <button
+                                    type="button"
+                                    id="clear-search"
+                                    class="clear-search"
+                                    aria-label="پاک کردن"
+                                >
+                                    ×
+                                </button>
+
+                            </div>
+
+                            <button type="submit" class="btn btn-primary search-submit">
+                                جستجو
+                            </button>
+
+                        </form>
+
+                    </div>
+
+
+                    <!-- Search Filters -->
+                    <div class="search-tabs">
+
+                        <button
+                            class="search-tab active"
+                            data-filter="all"
+                            type="button"
+                        >
+                            همه
+                        </button>
+
+                        <button
+                            class="search-tab"
+                            data-filter="posts"
+                            type="button"
+                        >
+                            نوشته‌ها
+                        </button>
+
+                        <button
+                            class="search-tab"
+                            data-filter="users"
+                            type="button"
+                        >
+                            کاربران
+                        </button>
+
+                    </div>
+
+
+                    <!-- ================= SEARCH RESULTS ================= -->
+                    <div id="search-results" class="search-results">
+
+                        <!-- ---------- USER RESULT ---------- -->
+                        <article class="search-user-card">
+
+                            <a href="profile.html" class="avatar avatar-md">
+                                AR
+                            </a>
+
+                            <div class="search-user-info">
+
+                                <a href="profile.html" class="user-name">
+                                    آرین
+                                </a>
+
+                                <a href="profile.html" class="user-username">
+                                    @arian
+                                </a>
+
+                                <p class="user-bio">
+                                    عاشق تکنولوژی، طراحی و ساختن چیزهای جدید.
+                                </p>
+
+                            </div>
+
+                            <a
+                                href="login.html"
+                                class="btn btn-outline follow-btn"
+                            >
+                                دنبال کردن
+                            </a>
+
+                        </article>
+
+
+                        <!-- ---------- USER RESULT ---------- -->
+                        <article class="search-user-card">
+
+                            <a href="profile.html" class="avatar avatar-md">
+                                MN
+                            </a>
+
+                            <div class="search-user-info">
+
+                                <a href="profile.html" class="user-name">
+                                    مهدی
+                                </a>
+
+                                <a href="profile.html" class="user-username">
+                                    @mehdi
+                                </a>
+
+                                <p class="user-bio">
+                                    Developer • Linux • Cyber Security
+                                </p>
+
+                            </div>
+
+                            <a
+                                href="login.html"
+                                class="btn btn-outline follow-btn"
+                            >
+                                دنبال کردن
+                            </a>
+
+                        </article>
+
+
+                        <!-- ---------- POST RESULT ---------- -->
+                        <article
+                            class="post-card"
+                            data-post-id="1"
+                        >
+
+                            <div class="post-header">
+
+                                <a href="profile.html" class="avatar">
+                                    AR
+                                </a>
+
+                                <div class="post-author">
+
+                                    <div class="author-line">
+
+                                        <a href="profile.html" class="user-name">
+                                            آرین
+                                        </a>
+
+                                        <a href="profile.html" class="user-username">
+                                            @arian
+                                        </a>
+
+                                        <span class="post-time">
+                                            · ۲ ساعت پیش
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="post-content">
+
+                                <a href="post.html" class="post-text-link">
+                                    <p class="post-text">
+                                        بعضی وقت‌ها بهترین ایده‌ها وقتی به وجود میان
+                                        که تصمیم می‌گیری فقط شروع کنی.
+                                    </p>
+                                </a>
+
+                            </div>
+
+
+                            <div class="post-actions">
+
+                                <a
+                                    href="post.html"
+                                    class="post-action comment"
+                                >
+                                    <span>◯</span>
+                                    <span>۱۲</span>
+                                </a>
+
+                                <a
+                                    href="login.html"
+                                    class="post-action repost"
+                                >
+                                    <span>↻</span>
+                                    <span>۸</span>
+                                </a>
+
+                                <a
+                                    href="login.html"
+                                    class="post-action like"
+                                >
+                                    <span>♡</span>
+                                    <span>۴۷</span>
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="post-action share"
+                                    data-share-post="1"
+                                >
+                                    <span>↗</span>
+                                </button>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- ---------- POST RESULT ---------- -->
+                        <article
+                            class="post-card"
+                            data-post-id="2"
+                        >
+
+                            <div class="post-header">
+
+                                <a href="profile.html" class="avatar">
+                                    MN
+                                </a>
+
+                                <div class="post-author">
+
+                                    <div class="author-line">
+
+                                        <a href="profile.html" class="user-name">
+                                            مهدی
+                                        </a>
+
+                                        <a href="profile.html" class="user-username">
+                                            @mehdi
+                                        </a>
+
+                                        <span class="post-time">
+                                            · ۵ ساعت پیش
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="post-content">
+
+                                <a href="post.html" class="post-text-link">
+                                    <p class="post-text">
+                                        Linux فقط یک سیستم‌عامل نیست؛
+                                        برای خیلی‌ها یک سبک فکر کردنه.
+                                    </p>
+                                </a>
+
+                            </div>
+
+
+                            <div class="post-actions">
+
+                                <a
+                                    href="post.html"
+                                    class="post-action comment"
+                                >
+                                    <span>◯</span>
+                                    <span>۶</span>
+                                </a>
+
+                                <a
+                                    href="login.html"
+                                    class="post-action repost"
+                                >
+                                    <span>↻</span>
+                                    <span>۳</span>
+                                </a>
+
+                                <a
+                                    href="login.html"
+                                    class="post-action like"
+                                >
+                                    <span>♡</span>
+                                    <span>۲۱</span>
+                                </a>
+
+                                <button
+                                    type="button"
+                                    class="post-action share"
+                                    data-share-post="2"
+                                >
+                                    <span>↗</span>
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- ================= LOADING ================= -->
+                    <div
+                        id="search-loading"
+                        class="state-box"
+                        hidden
+                    >
+                        <div class="loading-spinner"></div>
+                        <p>در حال جستجو...</p>
+                    </div>
+
+
+                    <!-- ================= EMPTY ================= -->
+                    <div
+                        id="search-empty"
+                        class="state-box"
+                        hidden
+                    >
+                        <div class="state-icon">⌕</div>
+
+                        <h3>چیزی پیدا نشد</h3>
+
+                        <p>
+                            عبارت دیگری را امتحان کن.
+                        </p>
+                    </div>
+
+
+                    <!-- ================= INITIAL STATE ================= -->
+                    <div
+                        id="search-initial"
+                        class="state-box search-initial"
+                        hidden
+                    >
+
+                        <div class="state-icon">
+                            ⌕
+                        </div>
+
+                        <h3>
+                            دنبال چی می‌گردی؟
+                        </h3>
+
+                        <p>
+                            نام کاربر، موضوع یا نوشته‌ای را جستجو کن.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+
+            <!-- ================= RIGHT PANEL ================= -->
+            <aside class="right-panel">
+
+                <div class="glass-panel">
+
+                    <div class="panel-header">
+                        <h3>موضوعات داغ</h3>
+                    </div>
+
+                    <a href="search.html?query=برنامه‌نویسی" class="trend-item">
+                        <span>موضوع داغ</span>
+                        <strong>#برنامه‌نویسی</strong>
+                        <small>۱.۲K نوشته</small>
+                    </a>
+
+                    <a href="search.html?query=تکنولوژی" class="trend-item">
+                        <span>موضوع داغ</span>
+                        <strong>#تکنولوژی</strong>
+                        <small>۸۴۰ نوشته</small>
+                    </a>
+
+                    <a href="search.html?query=امنیت" class="trend-item">
+                        <span>موضوع داغ</span>
+                        <strong>#امنیت</strong>
+                        <small>۵۷۰ نوشته</small>
+                    </a>
+
+                    <a href="search.html?query=گیم" class="trend-item">
+                        <span>موضوع داغ</span>
+                        <strong>#گیم</strong>
+                        <small>۳۲۰ نوشته</small>
+                    </a>
+
+                    <a href="search.html" class="show-more">
+                        نمایش بیشتر
+                    </a>
+
+                </div>
+
+
+                <!-- Suggested Users -->
+                <div class="glass-panel">
+
+                    <div class="panel-header">
+                        <h3>پیشنهاد برای دنبال کردن</h3>
+                    </div>
+
+                    <div class="suggested-user">
+
+                        <a href="profile.html" class="avatar avatar-sm">
+                            CY
+                        </a>
+
+                        <div class="suggested-user-info">
+
+                            <a href="profile.html" class="user-name">
+                                سایبر
+                            </a>
+
+                            <span class="user-username">
+                                @cyber
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="login.html"
+                            class="mini-follow"
+                        >
+                            +
+                        </a>
+
+                    </div>
+
+
+                    <div class="suggested-user">
+
+                        <a href="profile.html" class="avatar avatar-sm">
+                            UX
+                        </a>
+
+                        <div class="suggested-user-info">
+
+                            <a href="profile.html" class="user-name">
+                                دیزاینر
+                            </a>
+
+                            <span class="user-username">
+                                @designer
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="login.html"
+                            class="mini-follow"
+                        >
+                            +
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Footer -->
+                <footer class="side-footer">
+
+                    <a href="#">درباره نگار</a>
+                    <a href="#">قوانین</a>
+                    <a href="#">حریم خصوصی</a>
+
+                    <span>
+                        © ۲۰۲۶ نگار
+                    </span>
+
+                </footer>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="js/app.js" defer></script>
+    <script src="js/search.js" defer></script>
+
+</body>
+
+</html>

@@ -1,693 +1,1893 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#edf3f8">
-<title>نگار | خانه</title>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
-
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-html,body{
-    width:100%;
-    min-height:100%;
-    overflow-x:hidden;
-}
-
-body{
-    font-family:"Vazirmatn",Tahoma,sans-serif;
-    color:#18222c;
-    background:
-        radial-gradient(circle at 85% 5%,rgba(153,204,234,.32),transparent 32%),
-        radial-gradient(circle at 10% 50%,rgba(255,255,255,.9),transparent 30%),
-        linear-gradient(135deg,#eef4f8,#f8fafc 50%,#e6edf3);
-}
-
-button,input{
-    font:inherit;
-}
-
-button{
-    border:0;
-    cursor:pointer;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-/* HEADER */
-
-.header{
-    position:sticky;
-    top:0;
-    z-index:50;
-    width:100%;
-    height:64px;
-    padding:8px 14px;
-    background:rgba(248,251,253,.78);
-    border-bottom:1px solid rgba(255,255,255,.9);
-    backdrop-filter:blur(22px);
-    -webkit-backdrop-filter:blur(22px);
-}
-
-.header-inner{
-    width:100%;
-    max-width:1180px;
-    height:100%;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo{
-    flex:0 0 auto;
-    display:flex;
-    align-items:center;
-    gap:9px;
-}
-
-.logo-icon{
-    width:40px;
-    height:40px;
-    display:grid;
-    place-items:center;
-    border-radius:13px;
-    background:linear-gradient(145deg,#fff,#d4e1ea);
-    border:1px solid rgba(255,255,255,.9);
-    box-shadow:0 6px 18px rgba(70,100,120,.12);
-    color:#4c82a6;
-    font-weight:800;
-}
-
-.logo-name{
-    font-size:19px;
-    font-weight:800;
-}
-
-.header-search{
-    flex:1;
-    max-width:430px;
-    margin:auto;
-}
-
-.header-search input{
-    width:100%;
-    height:42px;
-    padding:0 18px;
-    border-radius:999px;
-    border:1px solid rgba(255,255,255,.85);
-    background:rgba(255,255,255,.58);
-    outline:none;
-}
-
-.header-search input:focus{
-    background:#fff;
-    border-color:rgba(75,135,175,.3);
-}
-
-.login-button{
-    flex:0 0 auto;
-    padding:9px 16px;
-    border-radius:12px;
-    background:#628eae;
-    color:#fff;
-    font-weight:700;
-}
-
-/* PAGE */
-
-.page{
-    width:100%;
-    max-width:1180px;
-    margin:auto;
-    padding:18px 14px 100px;
-}
-
-.layout{
-    display:grid;
-    grid-template-columns:210px minmax(0,1fr) 270px;
-    gap:18px;
-    align-items:start;
-}
-
-/* SIDEBAR */
-
-.sidebar{
-    position:sticky;
-    top:82px;
-}
-
-.menu{
-    padding:8px;
-    border-radius:20px;
-    background:rgba(255,255,255,.52);
-    border:1px solid rgba(255,255,255,.8);
-    backdrop-filter:blur(20px);
-}
-
-.menu-item{
-    width:100%;
-    min-height:46px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:8px 12px;
-    border-radius:12px;
-    background:transparent;
-    color:#596875;
-    text-align:right;
-}
-
-.menu-item:hover,
-.menu-item.active{
-    background:rgba(220,237,248,.72);
-    color:#3f769b;
-}
-
-.create{
-    width:100%;
-    height:48px;
-    margin-top:12px;
-    border-radius:14px;
-    background:#628eae;
-    color:#fff;
-    font-weight:700;
-}
-
-/* FEED */
-
-.feed{
-    min-width:0;
-}
-
-.feed-title{
-    padding:5px 4px 14px;
-    font-size:20px;
-    font-weight:800;
-}
-
-.guest{
-    padding:18px;
-    margin-bottom:12px;
-    border-radius:20px;
-    background:rgba(220,237,248,.65);
-    border:1px solid rgba(255,255,255,.85);
-    text-align:center;
-    color:#596875;
-}
-
-.guest strong{
-    color:#273743;
-}
-
-.post{
-    width:100%;
-    margin-bottom:12px;
-    padding:17px;
-    border-radius:21px;
-    background:rgba(255,255,255,.62);
-    border:1px solid rgba(255,255,255,.85);
-    box-shadow:0 10px 30px rgba(60,80,95,.08);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-}
-
-.post-head{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.avatar{
-    flex:0 0 auto;
-    width:43px;
-    height:43px;
-    display:grid;
-    place-items:center;
-    border-radius:50%;
-    background:linear-gradient(145deg,#e6f1f7,#b8ccd9);
-    color:#4d7894;
-    font-weight:800;
-}
-
-.author{
-    min-width:0;
-}
-
-.author-name{
-    font-weight:700;
-}
-
-.author-user{
-    color:#8a96a0;
-    font-size:12px;
-}
-
-.post-time{
-    margin-right:auto;
-    color:#929da6;
-    font-size:11px;
-}
-
-.post-text{
-    margin-top:14px;
-    line-height:2;
-    overflow-wrap:anywhere;
-}
-
-.actions{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    margin-top:13px;
-    padding-top:8px;
-    border-top:1px solid rgba(100,120,135,.09);
-}
-
-.action{
-    height:36px;
-    border-radius:10px;
-    background:transparent;
-    color:#7d8b97;
-}
-
-.action:hover{
-    background:rgba(255,255,255,.65);
-    color:#4f85a8;
-}
-
-/* RIGHT */
-
-.right{
-    position:sticky;
-    top:82px;
-}
-
-.panel{
-    overflow:hidden;
-    margin-bottom:14px;
-    border-radius:20px;
-    background:rgba(255,255,255,.55);
-    border:1px solid rgba(255,255,255,.8);
-    backdrop-filter:blur(18px);
-}
-
-.panel-title{
-    padding:15px;
-    font-weight:800;
-}
-
-.trend{
-    padding:11px 15px;
-    border-top:1px solid rgba(100,120,135,.08);
-}
-
-.trend small{
-    color:#8b969f;
-}
-
-.trend b{
-    display:block;
-    margin-top:2px;
-}
-
-.more{
-    display:block;
-    padding:13px 15px;
-    color:#4e82a4;
-    font-size:13px;
-}
-
-/* MOBILE NAV */
-
-.mobile-nav{
-    display:none;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1050px){
-    .layout{
-        grid-template-columns:190px minmax(0,1fr);
-    }
-
-    .right{
-        display:none;
-    }
-}
-
-@media(max-width:760px){
-    .header{
-        height:60px;
-    }
-
-    .header-search{
-        display:none;
-    }
-
-    .page{
-        padding:12px 8px 88px;
-    }
-
-    .layout{
-        display:block;
-    }
-
-    .sidebar{
-        display:none;
-    }
-
-    .feed-title{
-        font-size:18px;
-    }
-
-    .post{
-        padding:14px;
-        border-radius:18px;
-    }
-
-    .mobile-nav{
-        position:fixed;
-        z-index:100;
-        display:flex;
-        align-items:center;
-        justify-content:space-around;
-        right:8px;
-        left:8px;
-        bottom:8px;
-        height:64px;
-        border-radius:21px;
-        background:rgba(248,252,254,.88);
-        border:1px solid rgba(255,255,255,.95);
-        box-shadow:0 12px 35px rgba(50,70,85,.18);
-        backdrop-filter:blur(22px);
-        -webkit-backdrop-filter:blur(22px);
-    }
-
-    .mobile-nav a{
-        min-width:58px;
-        height:52px;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-        gap:1px;
-        color:#75838f;
-        font-size:10px;
-        border-radius:14px;
-    }
-
-    .mobile-nav a.active{
-        background:#e0edf5;
-        color:#4b80a4;
-    }
-
-    .mobile-nav span:first-child{
-        font-size:20px;
-    }
-}
-
-@media(max-width:390px){
-    .logo-name{
-        display:none;
-    }
-
-    .login-button{
-        padding:8px 12px;
-        font-size:12px;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#f4f4f0">
+    <meta
+        name="description"
+        content="نگار؛ شبکه اجتماعی فارسی برای نوشتن، دیدن و ارتباط."
+    >
+
+    <title>نگار — خانه</title>
+
+    <style>
+
+        /* =========================================================
+           NEGAR — NEO BRUTALISM
+           index.html
+        ========================================================= */
+
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+
+        /* =========================
+           RESET
+        ========================= */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            width: 100%;
+            min-height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            font-family: "Vazirmatn", Tahoma, sans-serif;
+
+            color: #111111;
+            background: #f4f4f0;
+
+            line-height: 1.7;
+        }
+
+        button,
+        input,
+        textarea {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           VARIABLES
+        ========================= */
+
+        :root {
+
+            --black: #111111;
+            --white: #ffffff;
+
+            --paper: #f4f4f0;
+            --paper-2: #e9e9e4;
+
+            --blue: #9bdcff;
+            --blue-dark: #4db8ed;
+
+            --yellow: #ffe66d;
+            --pink: #ff9ecb;
+            --green: #a7f36d;
+
+            --gray: #777777;
+            --border: 3px solid var(--black);
+
+            --shadow: 6px 6px 0 var(--black);
+            --shadow-small: 4px 4px 0 var(--black);
+        }
+
+
+        /* =========================
+           GLOBAL
+        ========================= */
+
+        ::selection {
+            background: var(--black);
+            color: var(--blue);
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--blue-dark);
+            outline-offset: 3px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .topbar {
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            width: 100%;
+            height: 74px;
+
+            background: var(--white);
+
+            border-bottom: var(--border);
+        }
+
+        .topbar-inner {
+
+            width: min(1240px, 100%);
+            height: 100%;
+
+            margin: 0 auto;
+            padding: 0 18px;
+
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+
+        /* LOGO */
+
+        .brand {
+
+            flex: 0 0 auto;
+
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-icon {
+
+            width: 44px;
+            height: 44px;
+
+            display: grid;
+            place-items: center;
+
+            background: var(--blue);
+
+            border: var(--border);
+
+            box-shadow: var(--shadow-small);
+
+            font-size: 22px;
+            font-weight: 900;
+
+            transform: rotate(-2deg);
+        }
+
+        .brand-name {
+
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+
+        /* HEADER SEARCH */
+
+        .header-search {
+
+            flex: 1;
+
+            max-width: 470px;
+
+            margin: 0 auto;
+        }
+
+        .header-search input {
+
+            width: 100%;
+            height: 46px;
+
+            padding: 0 16px;
+
+            border: var(--border);
+
+            background: var(--paper);
+
+            color: var(--black);
+
+            outline: none;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .header-search input::placeholder {
+            color: #777;
+        }
+
+        .header-search input:focus {
+
+            background: var(--blue);
+
+            box-shadow: var(--shadow-small);
+        }
+
+
+        /* LOGIN */
+
+        .login-button {
+
+            flex: 0 0 auto;
+
+            min-width: 82px;
+            height: 44px;
+
+            padding: 0 15px;
+
+            border: var(--border);
+
+            background: var(--black);
+            color: var(--white);
+
+            font-weight: 800;
+
+            box-shadow: var(--shadow-small);
+
+            transition:
+                transform .12s ease,
+                box-shadow .12s ease;
+        }
+
+        .login-button:hover {
+
+            transform: translate(3px, 3px);
+
+            box-shadow: 1px 1px 0 var(--black);
+        }
+
+
+        /* =========================
+           PAGE
+        ========================= */
+
+        .page {
+
+            width: min(1240px, 100%);
+
+            margin: 0 auto;
+
+            padding: 22px 18px 110px;
+        }
+
+
+        /* =========================
+           DESKTOP LAYOUT
+        ========================= */
+
+        .layout {
+
+            display: grid;
+
+            grid-template-columns:
+                210px
+                minmax(0, 1fr)
+                280px;
+
+            gap: 20px;
+
+            align-items: start;
+        }
+
+
+        /* =========================
+           SIDEBAR
+        ========================= */
+
+        .sidebar {
+
+            position: sticky;
+            top: 94px;
+
+            min-width: 0;
+        }
+
+        .menu {
+
+            width: 100%;
+
+            padding: 8px;
+
+            background: var(--white);
+
+            border: var(--border);
+
+            box-shadow: var(--shadow);
+        }
+
+        .menu-item {
+
+            width: 100%;
+            min-height: 48px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 11px;
+
+            padding: 8px 12px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: var(--black);
+
+            text-align: right;
+
+            font-weight: 700;
+
+            transition: .12s ease;
+        }
+
+        .menu-item:hover {
+
+            background: var(--blue);
+
+            padding-right: 17px;
+        }
+
+        .menu-item.active {
+
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .menu-icon {
+
+            width: 25px;
+
+            font-size: 19px;
+
+            text-align: center;
+        }
+
+
+        /* CREATE BUTTON */
+
+        .create {
+
+            width: 100%;
+            height: 54px;
+
+            margin-top: 15px;
+
+            border: var(--border);
+
+            background: var(--blue);
+
+            color: var(--black);
+
+            box-shadow: var(--shadow);
+
+            font-weight: 900;
+
+            transition:
+                transform .12s ease,
+                box-shadow .12s ease;
+        }
+
+        .create:hover {
+
+            transform: translate(4px, 4px);
+
+            box-shadow: 2px 2px 0 var(--black);
+        }
+
+        .create:active {
+
+            transform: translate(6px, 6px);
+
+            box-shadow: none;
+        }
+
+
+        /* =========================
+           FEED
+        ========================= */
+
+        .feed {
+
+            min-width: 0;
+        }
+
+        .feed-title {
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 14px;
+
+            font-size: 23px;
+            font-weight: 900;
+        }
+
+        .feed-title::after {
+
+            content: "LIVE";
+
+            padding: 3px 8px;
+
+            background: var(--yellow);
+
+            border: 2px solid var(--black);
+
+            font-size: 10px;
+            font-weight: 900;
+
+            box-shadow: 3px 3px 0 var(--black);
+        }
+
+
+        /* =========================
+           GUEST NOTICE
+        ========================= */
+
+        .guest {
+
+            margin-bottom: 16px;
+
+            padding: 18px;
+
+            background: var(--yellow);
+
+            border: var(--border);
+
+            box-shadow: var(--shadow);
+
+            font-size: 13px;
+
+            font-weight: 500;
+        }
+
+        .guest strong {
+
+            display: block;
+
+            margin-bottom: 3px;
+
+            font-size: 16px;
+            font-weight: 900;
+        }
+
+        .guest button {
+
+            margin-top: 7px;
+
+            border: 0;
+
+            background: transparent;
+
+            color: var(--black);
+
+            font-weight: 900;
+
+            text-decoration: underline;
+        }
+
+
+        /* =========================
+           POST
+        ========================= */
+
+        .post {
+
+            width: 100%;
+
+            margin-bottom: 16px;
+
+            padding: 18px;
+
+            background: var(--white);
+
+            border: var(--border);
+
+            box-shadow: var(--shadow);
+
+            transition:
+                transform .12s ease,
+                box-shadow .12s ease;
+        }
+
+        .post:hover {
+
+            transform: translate(-2px, -2px);
+
+            box-shadow: 8px 8px 0 var(--black);
+        }
+
+
+        /* POST HEADER */
+
+        .post-head {
+
+            display: flex;
+            align-items: center;
+
+            gap: 11px;
+
+            min-width: 0;
+        }
+
+        .avatar {
+
+            flex: 0 0 auto;
+
+            width: 46px;
+            height: 46px;
+
+            display: grid;
+            place-items: center;
+
+            background: var(--blue);
+
+            border: 3px solid var(--black);
+
+            font-weight: 900;
+
+            box-shadow: 3px 3px 0 var(--black);
+        }
+
+        .author {
+
+            min-width: 0;
+        }
+
+        .author-name {
+
+            font-weight: 900;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .author-user {
+
+            color: #666;
+
+            font-size: 12px;
+        }
+
+        .post-time {
+
+            margin-right: auto;
+
+            flex: 0 0 auto;
+
+            color: #666;
+
+            font-size: 11px;
+        }
+
+
+        /* POST TEXT */
+
+        .post-text {
+
+            margin-top: 15px;
+
+            font-size: 15px;
+
+            line-height: 2;
+
+            overflow-wrap: anywhere;
+        }
+
+
+        /* =========================
+           POST ACTIONS
+        ========================= */
+
+        .actions {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 7px;
+
+            margin-top: 16px;
+
+            padding-top: 12px;
+
+            border-top: 2px solid var(--black);
+        }
+
+        .action {
+
+            min-width: 0;
+
+            height: 38px;
+
+            border: 2px solid var(--black);
+
+            background: var(--paper);
+
+            color: var(--black);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            transition: .1s ease;
+        }
+
+        .action:hover {
+
+            background: var(--blue);
+
+            box-shadow: 3px 3px 0 var(--black);
+
+            transform: translate(-2px, -2px);
+        }
+
+        .action:active {
+
+            transform: translate(1px, 1px);
+
+            box-shadow: none;
+        }
+
+
+        /* =========================
+           RIGHT PANEL
+        ========================= */
+
+        .right {
+
+            position: sticky;
+            top: 94px;
+
+            min-width: 0;
+        }
+
+        .panel {
+
+            margin-bottom: 18px;
+
+            background: var(--white);
+
+            border: var(--border);
+
+            box-shadow: var(--shadow);
+        }
+
+        .panel-title {
+
+            padding: 13px 15px;
+
+            background: var(--black);
+            color: var(--white);
+
+            font-size: 15px;
+            font-weight: 900;
+        }
+
+        .trend {
+
+            padding: 13px 15px;
+
+            border-top: 2px solid var(--black);
+        }
+
+        .trend:hover {
+
+            background: var(--blue);
+        }
+
+        .trend small {
+
+            display: block;
+
+            color: #666;
+
+            font-size: 10px;
+        }
+
+        .trend b {
+
+            display: block;
+
+            margin-top: 2px;
+
+            font-size: 13px;
+        }
+
+        .more {
+
+            display: block;
+
+            padding: 12px 15px;
+
+            background: var(--yellow);
+
+            border-top: 2px solid var(--black);
+
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .more:hover {
+
+            background: var(--blue);
+        }
+
+
+        /* =========================
+           MOBILE NAV
+        ========================= */
+
+        .mobile-nav {
+
+            display: none;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1080px) {
+
+            .layout {
+
+                grid-template-columns:
+                    190px
+                    minmax(0, 1fr);
+            }
+
+            .right {
+                display: none;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 760px) {
+
+            body {
+                background: var(--paper);
+            }
+
+            .topbar {
+
+                height: 64px;
+            }
+
+            .topbar-inner {
+
+                padding: 0 10px;
+
+                gap: 9px;
+            }
+
+            .brand-name {
+
+                font-size: 20px;
+            }
+
+            .brand-icon {
+
+                width: 39px;
+                height: 39px;
+
+                font-size: 19px;
+
+                box-shadow: 3px 3px 0 var(--black);
+            }
+
+            .header-search {
+                display: none;
+            }
+
+            .login-button {
+
+                height: 40px;
+
+                min-width: 70px;
+
+                padding: 0 10px;
+
+                font-size: 12px;
+
+                box-shadow: 3px 3px 0 var(--black);
+            }
+
+
+            /* PAGE */
+
+            .page {
+
+                width: 100%;
+
+                padding:
+                    12px
+                    8px
+                    90px;
+            }
+
+
+            /* LAYOUT */
+
+            .layout {
+
+                display: block;
+            }
+
+            .sidebar,
+            .right {
+
+                display: none;
+            }
+
+
+            /* FEED */
+
+            .feed-title {
+
+                margin-bottom: 12px;
+
+                font-size: 19px;
+            }
+
+            .feed-title::after {
+
+                font-size: 9px;
+
+                padding: 2px 6px;
+
+                box-shadow: 2px 2px 0 var(--black);
+            }
+
+
+            /* GUEST */
+
+            .guest {
+
+                padding: 14px;
+
+                margin-bottom: 13px;
+
+                box-shadow: 4px 4px 0 var(--black);
+
+                font-size: 12px;
+            }
+
+            .guest strong {
+                font-size: 14px;
+            }
+
+
+            /* POST */
+
+            .post {
+
+                padding: 14px;
+
+                margin-bottom: 13px;
+
+                box-shadow: 4px 4px 0 var(--black);
+
+                border-width: 2px;
+            }
+
+            .post:hover {
+
+                transform: none;
+
+                box-shadow: 4px 4px 0 var(--black);
+            }
+
+            .avatar {
+
+                width: 40px;
+                height: 40px;
+
+                border-width: 2px;
+
+                box-shadow: 2px 2px 0 var(--black);
+            }
+
+            .author-name {
+                font-size: 13px;
+            }
+
+            .author-user {
+                font-size: 10px;
+            }
+
+            .post-time {
+                font-size: 9px;
+            }
+
+            .post-text {
+
+                margin-top: 13px;
+
+                font-size: 13px;
+
+                line-height: 2;
+            }
+
+
+            /* ACTIONS */
+
+            .actions {
+
+                gap: 5px;
+
+                margin-top: 13px;
+
+                padding-top: 9px;
+            }
+
+            .action {
+
+                height: 34px;
+
+                border-width: 2px;
+
+                font-size: 10px;
+            }
+
+
+            /* MOBILE NAV */
+
+            .mobile-nav {
+
+                position: fixed;
+
+                z-index: 200;
+
+                right: 8px;
+                left: 8px;
+                bottom: 8px;
+
+                height: 62px;
+
+                display: grid;
+
+                grid-template-columns: repeat(4, 1fr);
+
+                background: var(--white);
+
+                border: var(--border);
+
+                box-shadow: var(--shadow);
+
+                direction: rtl;
+            }
+
+            .mobile-nav a {
+
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+                justify-content: center;
+
+                gap: 1px;
+
+                color: var(--black);
+
+                font-size: 9px;
+
+                font-weight: 800;
+
+                border-left: 2px solid var(--black);
+
+                transition: .1s ease;
+            }
+
+            .mobile-nav a:last-child {
+                border-left: 0;
+            }
+
+            .mobile-nav a:hover,
+            .mobile-nav a.active {
+
+                background: var(--blue);
+            }
+
+            .mobile-nav .nav-icon {
+
+                font-size: 18px;
+
+                line-height: 1;
+            }
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 390px) {
+
+            .brand-name {
+                display: none;
+            }
+
+            .topbar-inner {
+                justify-content: space-between;
+            }
+
+            .post-time {
+                display: none;
+            }
+
+            .action {
+                font-size: 9px;
+            }
+
+            .mobile-nav {
+                height: 58px;
+            }
+        }
+
+
+        /* =========================
+           REDUCED MOTION
+        ========================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+
+                scroll-behavior: auto !important;
+
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<header class="header">
-    <div class="header-inner">
 
-        <a class="logo" href="index.html">
-            <div class="logo-icon">ن</div>
-            <div class="logo-name">نگار</div>
-        </a>
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
 
-        <div class="header-search">
-            <input
-                type="search"
-                placeholder="جستجو در نگار..."
-                onclick="location.href='search.html'"
-            >
-        </div>
+    <header class="topbar">
 
-        <button class="login-button" onclick="location.href='login.html'">
-            ورود
-        </button>
+        <div class="topbar-inner">
 
-    </div>
-</header>
 
-<main class="page">
+            <!-- LOGO -->
 
-<div class="layout">
+            <a href="index.html" class="brand">
 
-    <aside class="sidebar">
-
-        <nav class="menu">
-
-            <button class="menu-item active">
-                🏠
-                <span>خانه</span>
-            </button>
-
-            <button class="menu-item" onclick="location.href='search.html'">
-                🔍
-                <span>جستجو</span>
-            </button>
-
-            <button class="menu-item" onclick="location.href='profile.html'">
-                👤
-                <span>پروفایل</span>
-            </button>
-
-            <button class="menu-item" onclick="loginRequired()">
-                ⚙️
-                <span>تنظیمات</span>
-            </button>
-
-        </nav>
-
-        <button class="create" onclick="loginRequired()">
-            + نوشتن پست
-        </button>
-
-    </aside>
-
-    <section class="feed">
-
-        <div class="feed-title">
-            خانه
-        </div>
-
-        <div class="guest">
-            <strong>به نگار خوش آمدی</strong>
-            <br>
-            برای دیدن امکانات بیشتر وارد حساب شو.
-            <br><br>
-            <button onclick="location.href='login.html'"
-                    style="background:none;color:#4d82a5;font-weight:700">
-                ورود به حساب ←
-            </button>
-        </div>
-
-        <article class="post">
-
-            <div class="post-head">
-                <div class="avatar">آ</div>
-
-                <div class="author">
-                    <div class="author-name">آرین</div>
-                    <div class="author-user">@arian</div>
+                <div class="brand-icon">
+                    ن
                 </div>
 
-                <div class="post-time">
-                    ۲ ساعت پیش
-                </div>
-            </div>
-
-            <div class="post-text">
-                گاهی لازم نیست سریع‌تر حرکت کنی،
-                فقط باید مسیر درست را پیدا کنی.
-            </div>
-
-            <div class="actions">
-
-                <button class="action" onclick="loginRequired()">
-                    💬 ۸
-                </button>
-
-                <button class="action" onclick="loginRequired()">
-                    🔁 ۱۲
-                </button>
-
-                <button class="action" onclick="loginRequired()">
-                    ♡ ۴۷
-                </button>
-
-                <button class="action" onclick="sharePost()">
-                    ↗
-                </button>
-
-            </div>
-
-        </article>
-
-        <article class="post">
-
-            <div class="post-head">
-                <div class="avatar">ن</div>
-
-                <div class="author">
-                    <div class="author-name">نگار</div>
-                    <div class="author-user">@negar</div>
+                <div class="brand-name">
+                    نگار
                 </div>
 
-                <div class="post-time">
-                    ۵ ساعت پیش
-                </div>
-            </div>
-
-            <div class="post-text">
-                اولین قدم همیشه سخت‌ترین قدمه.
-            </div>
-
-            <div class="actions">
-                <button class="action" onclick="loginRequired()">💬 ۳</button>
-                <button class="action" onclick="loginRequired()">🔁 ۵</button>
-                <button class="action" onclick="loginRequired()">♡ ۲۱</button>
-                <button class="action" onclick="sharePost()">↗</button>
-            </div>
-
-        </article>
-
-    </section>
-
-    <aside class="right">
-
-        <div class="panel">
-
-            <div class="panel-title">
-                موضوعات داغ
-            </div>
-
-            <div class="trend">
-                <small>موضوع داغ</small>
-                <b>#برنامه_نویسی</b>
-            </div>
-
-            <div class="trend">
-                <small>موضوع داغ</small>
-                <b>#تکنولوژی</b>
-            </div>
-
-            <div class="trend">
-                <small>موضوع داغ</small>
-                <b>#زندگی</b>
-            </div>
-
-            <a class="more" href="search.html">
-                نمایش بیشتر
             </a>
 
+
+            <!-- SEARCH -->
+
+            <div class="header-search">
+
+                <input
+                    type="search"
+                    placeholder="جستجو در نگار..."
+                    aria-label="جستجو"
+                    onclick="location.href='search.html'"
+                >
+
+            </div>
+
+
+            <!-- LOGIN -->
+
+            <button
+                class="login-button"
+                onclick="location.href='login.html'"
+            >
+                ورود
+            </button>
+
+
         </div>
 
-        <div class="panel">
+    </header>
 
-            <div class="panel-title">
-                پیشنهاد برای شما
-            </div>
 
-            <div class="trend">
-                <b>آرین</b>
-                <small>@arian</small>
-            </div>
 
-            <div class="trend">
-                <b>نگار</b>
-                <small>@negar</small>
-            </div>
+    <!-- =========================================================
+         MAIN
+    ========================================================== -->
+
+    <main class="page">
+
+
+        <div class="layout">
+
+
+            <!-- =================================================
+                 LEFT SIDEBAR
+            ================================================== -->
+
+            <aside class="sidebar">
+
+                <nav class="menu">
+
+
+                    <button
+                        class="menu-item active"
+                        type="button"
+                    >
+
+                        <span class="menu-icon">
+                            ⌂
+                        </span>
+
+                        <span>
+                            خانه
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="menu-item"
+                        type="button"
+                        onclick="location.href='search.html'"
+                    >
+
+                        <span class="menu-icon">
+                            ⌕
+                        </span>
+
+                        <span>
+                            جستجو
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="menu-item"
+                        type="button"
+                        onclick="location.href='profile.html'"
+                    >
+
+                        <span class="menu-icon">
+                            ◯
+                        </span>
+
+                        <span>
+                            پروفایل
+                        </span>
+
+                    </button>
+
+
+                    <button
+                        class="menu-item"
+                        type="button"
+                        onclick="requireLogin()"
+                    >
+
+                        <span class="menu-icon">
+                            ⚙
+                        </span>
+
+                        <span>
+                            تنظیمات
+                        </span>
+
+                    </button>
+
+
+                </nav>
+
+
+                <button
+                    class="create"
+                    type="button"
+                    onclick="requireLogin()"
+                >
+                    + نوشتن پست
+                </button>
+
+
+            </aside>
+
+
+
+            <!-- =================================================
+                 FEED
+            ================================================== -->
+
+            <section class="feed">
+
+
+                <div class="feed-title">
+                    خانه
+                </div>
+
+
+
+                <!-- GUEST -->
+
+                <div class="guest">
+
+                    <strong>
+                        به نگار خوش آمدی.
+                    </strong>
+
+                    اینجا می‌تونی بنویسی، بخونی و با آدم‌ها ارتباط داشته باشی.
+
+                    <br>
+
+                    <button
+                        type="button"
+                        onclick="location.href='login.html'"
+                    >
+                        ورود یا ساخت حساب ←
+                    </button>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     POST 01
+                ================================================== -->
+
+                <article class="post">
+
+
+                    <div class="post-head">
+
+
+                        <div class="avatar">
+                            آ
+                        </div>
+
+
+                        <div class="author">
+
+                            <div class="author-name">
+                                آرین
+                            </div>
+
+                            <div class="author-user">
+                                @arian
+                            </div>
+
+                        </div>
+
+
+                        <div class="post-time">
+                            ۲ ساعت پیش
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="post-text">
+
+                        گاهی لازم نیست سریع‌تر حرکت کنی،
+                        فقط باید مسیر درست را پیدا کنی.
+
+                    </div>
+
+
+
+                    <div class="actions">
+
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="requireLogin()"
+                        >
+                            💬 ۸
+                        </button>
+
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="requireLogin()"
+                        >
+                            🔁 ۱۲
+                        </button>
+
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="requireLogin()"
+                        >
+                            ♡ ۴۷
+                        </button>
+
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="sharePost()"
+                        >
+                            ↗
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     POST 02
+                ================================================== -->
+
+                <article class="post">
+
+
+                    <div class="post-head">
+
+
+                        <div class="avatar">
+                            ن
+                        </div>
+
+
+                        <div class="author">
+
+                            <div class="author-name">
+                                نگار
+                            </div>
+
+                            <div class="author-user">
+                                @negar
+                            </div>
+
+                        </div>
+
+
+                        <div class="post-time">
+                            ۵ ساعت پیش
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="post-text">
+
+                        اولین قدم همیشه سخت‌ترین قدمه.
+
+                    </div>
+
+
+
+                    <div class="actions">
+
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="requireLogin()"
+                        >
+                            💬 ۳
+                        </button>
+
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="requireLogin()"
+                        >
+                            🔁 ۵
+                        </button>
+
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="requireLogin()"
+                        >
+                            ♡ ۲۱
+                        </button>
+
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="sharePost()"
+                        >
+                            ↗
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- =================================================
+                     POST 03
+                ================================================== -->
+
+                <article class="post">
+
+
+                    <div class="post-head">
+
+
+                        <div class="avatar">
+                            م
+                        </div>
+
+
+                        <div class="author">
+
+                            <div class="author-name">
+                                مهدی
+                            </div>
+
+                            <div class="author-user">
+                                @mehdi
+                            </div>
+
+                        </div>
+
+
+                        <div class="post-time">
+                            امروز
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div class="post-text">
+
+                        ساختن چیزی که واقعاً دوستش داری،
+                        خیلی بهتر از دنبال کردن چیزی است که بقیه برایت انتخاب کرده‌اند.
+
+                    </div>
+
+
+
+                    <div class="actions">
+
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="requireLogin()"
+                        >
+                            💬 ۱۴
+                        </button>
+
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="requireLogin()"
+                        >
+                            🔁 ۲۳
+                        </button>
+
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="requireLogin()"
+                        >
+                            ♡ ۸۹
+                        </button>
+
+
+                        <button
+                            class="action"
+                            type="button"
+                            onclick="sharePost()"
+                        >
+                            ↗
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RIGHT SIDEBAR
+            ================================================== -->
+
+            <aside class="right">
+
+
+                <!-- TRENDS -->
+
+                <div class="panel">
+
+                    <div class="panel-title">
+                        موضوعات داغ
+                    </div>
+
+
+                    <div class="trend">
+
+                        <small>
+                            موضوع داغ
+                        </small>
+
+                        <b>
+                            #برنامه_نویسی
+                        </b>
+
+                    </div>
+
+
+                    <div class="trend">
+
+                        <small>
+                            موضوع داغ
+                        </small>
+
+                        <b>
+                            #تکنولوژی
+                        </b>
+
+                    </div>
+
+
+                    <div class="trend">
+
+                        <small>
+                            موضوع داغ
+                        </small>
+
+                        <b>
+                            #زندگی
+                        </b>
+
+                    </div>
+
+
+                    <a
+                        href="search.html"
+                        class="more"
+                    >
+                        نمایش بیشتر ←
+                    </a>
+
+                </div>
+
+
+
+                <!-- SUGGESTIONS -->
+
+                <div class="panel">
+
+                    <div class="panel-title">
+                        پیشنهاد برای شما
+                    </div>
+
+
+                    <div class="trend">
+
+                        <b>
+                            آرین
+                        </b>
+
+                        <small>
+                            @arian
+                        </small>
+
+                    </div>
+
+
+                    <div class="trend">
+
+                        <b>
+                            نگار
+                        </b>
+
+                        <small>
+                            @negar
+                        </small>
+
+                    </div>
+
+
+                    <div class="trend">
+
+                        <b>
+                            مهدی
+                        </b>
+
+                        <small>
+                            @mehdi
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </aside>
+
 
         </div>
 
-    </aside>
+    </main>
 
-</div>
 
-</main>
 
-<nav class="mobile-nav">
+    <!-- =========================================================
+         MOBILE NAVIGATION
+    ========================================================== -->
 
-    <a href="index.html" class="active">
-        <span>⌂</span>
-        <span>خانه</span>
-    </a>
+    <nav class="mobile-nav">
 
-    <a href="search.html">
-        <span>⌕</span>
-        <span>جستجو</span>
-    </a>
 
-    <a href="#" onclick="loginRequired();return false;">
-        <span>＋</span>
-        <span>پست</span>
-    </a>
+        <a
+            href="index.html"
+            class="active"
+        >
 
-    <a href="profile.html">
-        <span>◯</span>
-        <span>پروفایل</span>
-    </a>
+            <span class="nav-icon">
+                ⌂
+            </span>
 
-</nav>
+            <span>
+                خانه
+            </span>
 
-<script>
-function loginRequired(){
-    const ok = confirm(
-        "برای استفاده از این قابلیت باید وارد حساب نگار شوید.\n\nورود به حساب؟"
-    );
+        </a>
 
-    if(ok){
-        location.href = "login.html";
-    }
-}
 
-async function sharePost(){
-    const data = {
-        title:"نگار",
-        text:"یک پست از شبکه اجتماعی نگار",
-        url:location.href
-    };
+        <a href="search.html">
 
-    if(navigator.share){
-        try{
-            await navigator.share(data);
-        }catch(e){}
-    }else{
-        try{
-            await navigator.clipboard.writeText(location.href);
-            alert("لینک کپی شد.");
-        }catch(e){
-            alert("لینک: " + location.href);
+            <span class="nav-icon">
+                ⌕
+            </span>
+
+            <span>
+                جستجو
+            </span>
+
+        </a>
+
+
+        <a
+            href="#"
+            onclick="requireLogin(); return false;"
+        >
+
+            <span class="nav-icon">
+                ＋
+            </span>
+
+            <span>
+                پست
+            </span>
+
+        </a>
+
+
+        <a href="profile.html">
+
+            <span class="nav-icon">
+                ◯
+            </span>
+
+            <span>
+                پروفایل
+            </span>
+
+        </a>
+
+
+    </nav>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* =========================
+           AUTH
+        ========================= */
+
+        function requireLogin() {
+
+            const loggedIn =
+                localStorage.getItem("negar_logged_in") === "true";
+
+
+            if (loggedIn) {
+
+                alert(
+                    "این قابلیت در نسخه بعدی فعال می‌شود."
+                );
+
+                return;
+            }
+
+
+            const goToLogin = confirm(
+                "برای استفاده از این قابلیت باید وارد حساب نگار شوید.\n\nورود به حساب؟"
+            );
+
+
+            if (goToLogin) {
+
+                window.location.href = "login.html";
+            }
+
         }
-    }
-}
-</script>
+
+
+
+        /* =========================
+           SHARE
+        ========================= */
+
+        async function sharePost() {
+
+            const shareData = {
+
+                title: "نگار",
+
+                text: "این پست را در نگار ببین.",
+
+                url: window.location.href
+
+            };
+
+
+            if (navigator.share) {
+
+                try {
+
+                    await navigator.share(shareData);
+
+                } catch (error) {
+
+                    /* User cancelled share */
+
+                }
+
+                return;
+            }
+
+
+            try {
+
+                await navigator.clipboard.writeText(
+                    window.location.href
+                );
+
+                alert("لینک پست کپی شد.");
+
+            } catch (error) {
+
+                alert(
+                    "امکان کپی خودکار لینک وجود ندارد."
+                );
+
+            }
+
+        }
+
+
+
+        /* =========================
+           SEARCH SHORTCUT
+        ========================= */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "/" &&
+                    document.activeElement.tagName !== "INPUT"
+                ) {
+
+                    event.preventDefault();
+
+                    window.location.href =
+                        "search.html";
+                }
+
+            }
+        );
+
+
+
+        /* =========================
+           MOBILE NAV ACTIVE STATE
+        ========================= */
+
+        document.querySelectorAll(
+            ".mobile-nav a"
+        ).forEach(function (link) {
+
+            link.addEventListener(
+                "click",
+                function () {
+
+                    document
+                        .querySelectorAll(".mobile-nav a")
+                        .forEach(function (item) {
+
+                            item.classList.remove("active");
+
+                        });
+
+
+                    link.classList.add("active");
+
+                }
+            );
+
+        });
+
+    </script>
 
 </body>
+
 </html>
